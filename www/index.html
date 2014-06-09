@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+        <meta charset="utf-8">
+        <style type="text/css">
+            
+            a, a:active { text-decoration: none }
+            
+            #playcontrols {
+                text-align: center;
+                margin-top: 50px;
+                width: 129px;
+                height: 103px;
+            }
+            #playcontrols #activityindicator, #playcontrols #stopbutton {
+                display: none;
+            }
+
+            #textpositiondiv {
+                margin-top: 100px;
+            }
+            body{
+                background: whitesmoke;
+                background: -moz-linear-gradient(top,  rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+                background: -webkit-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+                background: -o-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+                background: -ms-linear-gradient(top,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+                background: linear-gradient(to bottom,  rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C */
+                background-repeat: no-repeat;
+            }
+
+        </style>
+        <link rel="stylesheet" type="text/css" href="styles/slimmenu.min.css">
+
+        <script type="text/javascript" charset="utf-8" src="scripts/jquery.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="scripts/html5audio.js"></script>
+    </head>
+    <body>
+           <ul class="slimmenu">
+            <li>
+                <a href="#" onclick="changeAudioURL.argentina();">Argentina</a>
+            </li>
+            <li>
+                <a href="#" onclick="changeAudioURL.brasil();">Brasil</a>
+            </li>
+<!--            <li>
+                <a href="#" onclick="changeAudioURL.uruguay();" >Uruguay</a>
+            </li>
+            <li>
+                <a href="#" onclick="changeAudioURL.ecuador();">Ecuador</a>
+                <ul>
+                    <li>
+                        <a href="#">Slim Menu 3.1</a>
+                    
+                    </li>
+                    <li><a href="#">Slim Menu 3.2</a></li>
+                </ul>
+            </li>-->
+ 
+           </ul>
+        <h2>Aplicacion lejos de ser oficial de Radio Disney</h2>
+
+        <div id="playcontrols">
+            <a href="#" id="playbutton" onClick="html5audio.play();
+                    return false;"><img src="styles/img/iphone_btn_landscape_play.png" /></a>
+            <a href="#" id="activityindicator" onClick="html5audio.stop();
+                    return false;"><img src="images/activityindicator.gif" /></a>
+            <a href="#" id="stopbutton" onClick="html5audio.stop();
+                    return false;"><img src="styles/img/iphone_btn_landscape_pause.png" /></a>
+        </div>
+        <div id="textpositiondiv">Tiempo/estado: <span id="textposition">stopped</span></div>
+        <script type="text/javascript">
+            playButton = document.getElementById('playbutton');
+            stopButton = document.getElementById('stopbutton');
+            activityIndicator = document.getElementById('activityindicator');
+            textPosition = document.getElementById('textposition');
+        </script>
+        <script src="scripts/jquery.slimmenu.min.js"></script>
+        <script src="scripts/jquery.easing.min.js"></script>
+        <script>
+            $('ul.slimmenu').slimmenu(
+                    {
+                        resizeWidth: '800',
+                        collapserTitle: 'Main Menu',
+                        easingEffect: 'easeInOutQuint',
+                        animSpeed: 'medium',
+                        indentChildren: true,
+                        childrenIndenter: '&raquo;'
+                    });
+        </script>
+    </body>
+</html>
